@@ -1,0 +1,13 @@
+services:
+
+    ftp-server:
+        container_name: ftp-server
+        build: .
+        environment:
+            - USERNAME=admin
+            - PASSWORD=admin
+        volumes:
+            - "./data-local:/media/ftp"
+        ports:
+            - "127.0.0.1:8021:21"
+            - "127.0.0.1:40000-40009:40000-40009"
